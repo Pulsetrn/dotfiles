@@ -1,0 +1,301 @@
+// ============================================================
+// 1) Vim extension — core behavior & keybindings & mappings
+// ============================================================
+{
+  "vim.leader": "<Space>",
+  "vim.useSystemClipboard": true,
+  "vim.incsearch": true,
+  "vim.easymotion": true,
+  "vim.hlsearch": true,
+  "vim.easymotionKeys": "cflodnraghq;tesi",
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["leader", "O"], "commands": [":nohl"] },
+    {
+      "before": ["leader", "<left>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "<right>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["leader", "<up>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "<down>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "<S-d>"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["leader", "<S-b>"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["leader", "h"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["leader", "d"],
+      "after": ["d", "i", "w"]
+    },
+    {
+      "before": ["leader", "c"],
+      "after": ["c", "i", "w"]
+    },
+    {
+      "before": ["leader", "y"],
+      "after": ["y", "i", "w"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z", "z", "v"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z", "z", "v"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "_", "d", "P"]
+    },
+    {
+      "before": ["<leader>", "u"],
+      "after": ["<C-r>"]
+    },
+    {
+      "before": ["leader", "L"],
+      "commands": ["editor.action.copyLinesDownAction"]
+    },
+    {
+      "before": ["leader", "}"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["leader", "{"],
+      "commands": ["editor.action.marker.prev"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["D"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["U"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["C"], "commands": ["editor.action.commentLine"] },
+    { "before": ["L"], "commands": ["editor.action.copyLinesDownAction"] }
+  ],
+
+  // ============================================================
+  // 2) Editor — behavior, visuals, suggestions
+  // ============================================================
+  "editor.lineNumbers": "relative",
+  "editor.renderLineHighlight": "none",
+  "editor.lineHeight": 1.3,
+  "editor.letterSpacing": 0.4,
+  "editor.fontSize": 23,
+  "editor.fontWeight": "400",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": false,
+  "editor.tabSize": 4,
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": true,
+  "editor.folding": false,
+  "editor.glyphMargin": true,
+  "editor.suggestSelection": "first",
+  "editor.suggest.insertMode": "replace",
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": "on"
+  },
+  "editor.accessibilityPageSize": 15,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.mouseWheelScrollSensitivity": 2,
+  "editor.autoClosingBrackets": "never",
+  "editor.overtypeCursorStyle": "line",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+
+  // ============================================================
+  // 3) Workbench & UI layout
+  // ============================================================
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.editor.showTabs": "single",
+  "workbench.editor.showIcons": false,
+  "workbench.editor.labelFormat": "medium",
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "top",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.list.smoothScrolling": false,
+  // settings for github dark theme
+  "workbench.colorCustomizations": {
+    "editor.background": "#14171a",
+    "terminal.background": "#171b1f"
+  },
+
+  // ============================================================
+  // 4) Integrated terminal
+  // ============================================================
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.defaultProfile.windows": "Debian (WSL)",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.minimumContrastRatio": 1,
+  "terminal.integrated.gpuAcceleration": "auto",
+
+  // ============================================================
+  // 5) Python language & analysis
+  // ============================================================
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.rulers": [1000]
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.languageServer": "Default",
+
+  // ============================================================
+  // 6) Code Runner — language executors
+  // ============================================================
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc -std=c99 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "zig": "zig run",
+    "cpp": "cd $dir && g++ -std=c++17 $fileName -Wall -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python3 -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runghc",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "sml": "cd $dir && sml $fileName",
+    "mojo": "mojo run",
+    "erlang": "escript",
+    "spwn": "spwn build",
+    "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
+    "gleam": "gleam run -m $fileNameWithoutExt"
+  },
+
+  // ============================================================
+  // 7) C / C++ tooling
+  // ============================================================
+  "C_Cpp.codeAnalysis.clangTidy.config": "{ BasedOnStyle: Google, BreakBeforeBraces: Attach, IndentWidth: 4, TabWidth: 4, UseTab: Never }",
+
+  // ============================================================
+  // 8) ErrorLens & Git
+  // ============================================================
+  "errorLens.delay": 1000,
+  "errorLens.fontWeight": "300",
+  "errorLens.messageMaxChars": 80,
+  "errorLens.padding": "0px 1ch",
+  "errorLens.messageBackgroundMode": "message",
+  "errorLens.delayMode": "new",
+  "errorLens.followCursor": "allLines",
+  "errorLens.removeLinebreaks": true,
+
+  // ============================================================
+  // 9) JSON / JSONC formatting / prettier formatting
+  // ============================================================
+  "prettier.printWidth": 100,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ============================================================
+  // 10) Misc UX & performance
+  // ============================================================
+  "editor.quickSuggestionsDelay": 0,
+  "explorer.confirmDragAndDrop": false,
+  "window.titleBarStyle": "custom",
+  "window.commandCenter": false,
+  "chat.commandCenter.enabled": false,
+  "extensions.ignoreRecommendations": true,
+
+  // ============================================================
+  // 11) Catppuccin theme tweaks
+  // ============================================================
+  "catppuccin.bracketMode": "neovim",
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+
+  // ============================================================
+  // 12) Notebooks & Debug console
+  // ============================================================
+  "notebook.editorOptionsCustomizations": {
+    "editor.tabSize": 4,
+    "editor.indentSize": 4,
+    "editor.insertSpaces": false
+  },
+  "debug.console.fontSize": 18,
+  "debug.console.fontFamily": "JetBrains Mono",
+
+  // ============================================================
+  // 13) Git
+  // ============================================================
+  "git.autofetch": true,
+  "git.confirmSync": false
+}
