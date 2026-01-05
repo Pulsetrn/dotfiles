@@ -1,4 +1,4 @@
-theme = "Mellow"
+theme = "rasmus"
 
 [editor]
 line-number = "relative"
@@ -31,6 +31,11 @@ C-U = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befor
 C-D = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 "}" = "goto_next_paragraph"
 "{" = "goto_prev_paragraph"
+";" = "repeat_last_motion"
+
+[keys.normal.g]
+left = "goto_line_start"
+right = "goto_line_end"
 
 [keys.insert]
 C-i = "completion"
