@@ -5,17 +5,23 @@ line-number = "relative"
 mouse = true
 scrolloff = 10
 bufferline = "multiple"
-completion-timeout = 150
+popup-border = "all"
+continue-comments = false
 # auto-completion = false # If I want to trigger by hands only
+completion-timeout = 150
+preview-completion-insert = false
+completion-trigger-len = 2
+
+[editor.auto-pairs]
+"'" = "'"
+'"' = '"'
+'`' = '`'
 
 [editor.indent-guides]
 render = true
 
 [editor.cursor-shape]
 insert = "bar"
-
-[editor.soft-wrap]
-enable = true
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
