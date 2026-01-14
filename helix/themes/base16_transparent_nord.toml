@@ -1,0 +1,10 @@
+inherits = "base16_transparent"
+
+"variable" = "#d6d6d6"
+"variable.parameter" = "#d6d6d6"
+"punctuation" = "#d6d6d6"
+"operator" = "#d6d6d6"
+"comment" = "#8c8c8c"
+"ui.statusline" = { bg = "#1f2527", fg = "#6d788a" }
+"ui.bufferline" = { bg = "#1f2527", fg = "#6d788a" }
+"ui.bufferline.active" = { fg = "#d8dee9", modifiers = ["bold"] }
