@@ -1,0 +1,158 @@
+# UI colors (inferred from vague.nvim behavior)
+selection = "#252530"
+cursorline = "#1c1c24"
+menu = "#1c1c24"
+
+# Syntax highlighting
+"attribute" = { fg = "property" }
+"keyword" = { fg = "keyword" }
+"keyword.control" = { fg = "keyword" }
+"keyword.directive" = { fg = "keyword" }
+"keyword.function" = { fg = "keyword" }
+"keyword.operator" = { fg = "operator" }
+"keyword.return" = { fg = "keyword", modifiers = ["none"] }
+"punctuation" = { fg = "operator" }
+"punctuation.delimiter" = { fg = "operator" }
+"punctuation.bracket" = { fg = "operator" }
+"operator" = { fg = "operator" }
+"special" = { fg = "builtin" }
+"variable" = { fg = "fg" }
+"variable.parameter" = { fg = "parameter" }
+"variable.builtin" = { fg = "builtin" }
+"variable.other.member" = { fg = "property" }
+"type" = { fg = "type", modifiers = ["none"] }
+"type.builtin" = { fg = "type", modifiers = ["none"] }
+"constructor" = { fg = "type" }
+"function" = { fg = "func" }
+"function.builtin" = { fg = "builtin" }
+"function.macro" = { fg = "builtin" }
+"tag" = { fg = "keyword" }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"constant" = { fg = "constant", modifiers = ["none"] }
+"constant.builtin" = { fg = "constant", modifiers = ["none"] }
+"constant.numeric" = { fg = "number" }
+"constant.character" = { fg = "string" }
+"constant.character.escape" = { fg = "builtin" }
+"string" = { fg = "string", modifiers = ["none"] }
+"label" = { fg = "keyword" }
+
+# Markup (documentation)
+"markup.heading" = { fg = "type", modifiers = ["bold"] }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "hint", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "fg" }
+"markup.raw" = { fg = "string" }
+"markup.list" = { fg = "keyword" }
+
+# Diff
+"diff.plus" = { fg = "plus" }
+"diff.minus" = { fg = "error" }
+"diff.delta" = { fg = "delta" }
+
+# UI Elements
+"ui.background" = { bg = "bg" }
+"ui.background.separator" = { fg = "line" }
+"ui.linenr" = { fg = "comment" }
+"ui.linenr.selected" = { fg = "fg" }
+"ui.statusline" = { fg = "fg", bg = "inactiveBg" }
+"ui.statusline.inactive" = { fg = "comment", bg = "inactiveBg" }
+# Colored modes:
+"ui.statusline.normal" = { fg = "bg", bg = "keyword", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "plus", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "hint", modifiers = ["bold"] }
+# Clean modes:
+# "ui.statusline.normal" = { fg = "fg", bg = "inactiveBg" }
+# "ui.statusline.insert" = { fg = "plus", bg = "inactiveBg" }
+# "ui.statusline.select" = { fg = "hint", bg = "inactiveBg" }
+"ui.popup" = { bg = "inactiveBg" }
+"ui.window" = { bg = "bg" }
+"ui.help" = { bg = "inactiveBg", fg = "fg" }
+"ui.text" = { fg = "fg" }
+"ui.text.focus" = { fg = "fg", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "comment" }
+"ui.text.info" = { fg = "hint" }
+"ui.text.directory" = { fg = "keyword" }
+"ui.virtual" = { fg = "comment" }
+"ui.virtual.ruler" = { bg = "inactiveBg" }
+"ui.virtual.indent-guide" = { fg = "line" }
+"ui.virtual.jump-label" = { fg = "plus", modifiers = ["bold"] }
+"ui.virtual.inlay-hint" = { fg = "comment" }
+"ui.virtual.wrap" = { fg = "line" }
+
+"ui.selection" = { bg = "visual" }
+"ui.selection.primary" = { bg = "visual" }
+"ui.cursor" = { fg = "bg", bg = "fg" }
+"ui.cursor.primary" = { fg = "bg", bg = "fg" }
+"ui.cursor.match" = { fg = "operator", modifiers = ["bold"] }
+"ui.cursorline.primary" = { bg = "cursorline" }
+"ui.highlight" = { bg = "search" }
+"ui.highlight.frameline" = { bg = "line" }
+
+"ui.menu" = { fg = "fg", bg = "menu" }
+"ui.menu.selected" = { fg = "fg", bg = "visual" }
+"ui.menu.scroll" = { fg = "comment", bg = "line" }
+
+"ui.gutter" = { bg = "bg" }
+"ui.gutter.selected" = { bg = "cursorline" }
+
+"ui.debug" = { fg = "warning" }
+"ui.debug.breakpoint" = { fg = "error" }
+
+# Diagnostics
+"diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.hint" = { underline = { color = "hint" } }
+"diagnostic.info" = { underline = { color = "hint", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+"warning" = { fg = "warning" }
+"error" = { fg = "error" }
+"info" = { fg = "hint" }
+"hint" = { fg = "hint" }
+
+# Additional syntax elements
+"boolean" = { fg = "constant", modifiers = ["bold"] }
+"float" = { fg = "number" }
+"conditional" = { fg = "keyword" }
+"repeat" = { fg = "keyword" }
+"exception" = { fg = "keyword" }
+"include" = { fg = "keyword" }
+"storageclass" = { fg = "keyword" }
+"structure" = { fg = "type" }
+"typedef" = { fg = "type" }
+"field" = { fg = "property" }
+"method" = { fg = "func" }
+"namespace" = { fg = "type" }
+"regexp" = { fg = "string" }
+"character" = { fg = "string" }
+"symbol" = { fg = "constant" }
+
+[palette]
+# Core colors from vague.nvim (exact colors from the config)
+bg = "#141415"
+inactiveBg = "#1c1c24"
+fg = "#cdcdcd"
+floatBorder = "#878787"
+line = "#252530"
+comment = "#606079"
+builtin = "#b4d4cf"
+func = "#c48282"
+string = "#e8b589"
+number = "#e0a363"
+property = "#c3c3d5"
+constant = "#aeaed1"
+parameter = "#bb9dbd"
+visual = "#333738"
+error = "#d8647e"
+warning = "#f3be7c"
+hint = "#7e98e8"
+operator = "#90a0b5"
+keyword = "#6e94b2"
+type = "#9bb4bc"
+search = "#405065"
+plus = "#7fa563"
+delta = "#f3be7c"

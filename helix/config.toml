@@ -1,54 +1,103 @@
-theme = "rasmus"
+theme = "vague_theme"
+# theme = "base16_transparent_nord"
+# theme = "base16_transparent_upg"
 
 [editor]
 text-width = 90
 line-number = "relative"
+trim-final-newlines = true
+trim-trailing-whitespace = true
 mouse = true
 scrolloff = 10
 bufferline = "multiple"
 popup-border = "all"
 continue-comments = false
-# auto-completion = false # If I want to trigger by hands only
-completion-timeout = 150
+auto-completion = true
+completion-timeout = 250
+idle-timeout = 250
 preview-completion-insert = false
 completion-trigger-len = 2
+color-modes = true
 
 [editor.soft-wrap]
 enable = true
 wrap-indicator = "↪"
-# wrap-at-text-width = true
+max-wrap = 80
 
-[editor.auto-pairs]
-"'" = "'"
-'"' = '"'
-'`' = '`'
-
-[editor.indent-guides]
-render = true
+# [editor.auto-pairs]
+# "'" = "'"
+# '"' = '"'
+# '`' = '`'
 
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+center = []
+right = ["selections",  "file-encoding", "file-line-ending", "register", "position", "spacer"]
+
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+S-v = "extend_to_line_bounds"
+S-right = "jump_view_right"
+S-down = "jump_view_down"
+S-up = "jump_view_up"
+S-left = "jump_view_left"
+"ret" = "goto_word"
 "}" = ":buffer-next"
 "{" = ":buffer-previous"
+C-A-b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
 C-u = ["page_cursor_half_up", "align_view_center"]
 C-d = ["page_cursor_half_down", "align_view_center"]
 C-U = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 C-D = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 ";" = "repeat_last_motion"
-# Just for my nav layer:
-# C-left = "move_prev_word_start"
-# C-right = "move_next_word_start"
-C-up = ["page_cursor_half_up", "align_view_center"]
-C-down = ["page_cursor_half_down", "align_view_center"]
-C-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-C-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+# For my nav layer:
+"Cmd-left" = "goto_line_start"
+"Cmd-right" = "goto_line_end"
+A-left = "move_prev_word_start"
+A-right = "move_next_word_start"
+A-S-left = "move_prev_long_word_start"
+A-S-right = "move_next_long_word_start"
+A-up = ["page_cursor_half_up", "align_view_center"]
+A-down = ["page_cursor_half_down", "align_view_center"]
+A-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+
+[keys.normal.space]
+L = ":log-open"
+B = ":buffer-close"
 
 [keys.normal.g]
 left = "goto_line_start"
 right = "goto_line_end"
 
+[keys.select]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+S-v = "extend_to_line_bounds"
+# For my nav layer:
+"Cmd-left" = "goto_line_start"
+"Cmd-right" = "goto_line_end"
+A-left = "extend_prev_word_start"
+A-right = "extend_next_word_start"
+A-S-left = "extend_prev_long_word_start"
+A-S-right = "extend_next_long_word_start"
+A-up = ["page_cursor_half_up", "align_view_center", "keep_primary_selection"]
+A-down = ["page_cursor_half_down", "align_view_center", "keep_primary_selection"]
+A-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+
+[keys.select.g]
+left = "extend_to_line_start"
+right = "extend_to_line_end"
+
 [keys.insert]
 C-i = "completion"
+A-left = "move_prev_word_start"
+A-right = "move_next_word_start"
+A-S-left = "move_prev_long_word_start"
+A-S-right = "move_next_long_word_start"
